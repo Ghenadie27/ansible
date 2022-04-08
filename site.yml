@@ -4,9 +4,11 @@
   
   tasks:
   - name: Update apt-get repo and cache
+    tags: one, two
     apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
     when: ansible_distribution == "Ubuntu"
   - name: Upgrade all apt packages
+    tags: three, four
     apt: upgrade=dist force_apt_get=yes
     when: ansible_distribution == "Ubuntu"
 
@@ -15,4 +17,5 @@
 
   tasks:
   - name: Update apt-get repo and cache
+    tags: five, six
     apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
