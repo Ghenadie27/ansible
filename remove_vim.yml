@@ -1,0 +1,10 @@
+---
+- name: Remove vim
+  hosts: all
+  become: true
+  
+  tasks:
+  - name: Remove vim-nox
+    apt:
+      name: vim-nox
+      state: absent
