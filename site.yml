@@ -11,6 +11,14 @@
     tags: three, four
     apt: upgrade=dist force_apt_get=yes
     when: ansible_distribution == "Ubuntu"
+  - name: copy default html file for site
+    tags: seven
+    copy:
+      src: default_site.html
+      dest: /home/ubuntu/index1.html
+      owner: root
+      group: root
+      mode: 0644
 
 - hosts: aws, linode
   become: true
