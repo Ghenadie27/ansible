@@ -20,6 +20,16 @@
       group: root
       mode: 0644
 
+- hosts: all
+  become: true
+  tasks:
+
+  - name: create simone user
+    tags: nine
+    user:
+      name: simone
+      groups: root
+
 - hosts: aws, linode
   become: true
 
